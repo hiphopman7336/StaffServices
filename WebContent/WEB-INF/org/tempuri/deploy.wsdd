@@ -1,0 +1,210 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from StaffService WSDL service -->
+
+  <service name="StaffServiceSoap" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://tempuri.org/"/>
+      <parameter name="wsdlServiceElement" value="StaffService"/>
+      <parameter name="schemaQualified" value="http://tempuri.org/"/>
+      <parameter name="wsdlServicePort" value="StaffServiceSoap"/>
+      <parameter name="className" value="org.tempuri.StaffServiceSoapSkeleton"/>
+      <parameter name="wsdlPortType" value="StaffServiceSoap"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffByHeaderIDResponse"
+        type="java:org.tempuri.GetStaffByHeaderIDResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffInfoByIDWithOrgLevelResponse"
+        type="java:org.tempuri.GetStaffInfoByIDWithOrgLevelResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>>GetStaffInfoByLikeFNameLNameResponse>GetStaffInfoByLikeFNameLNameResult"
+        type="java:org.tempuri.GetStaffInfoByLikeFNameLNameResponseGetStaffInfoByLikeFNameLNameResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffInfoByUserNameResponse"
+        type="java:org.tempuri.GetStaffInfoByUserNameResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>>GetSrvCenterMgmtByScNameResponse>GetSrvCenterMgmtByScNameResult"
+        type="java:org.tempuri.GetSrvCenterMgmtByScNameResponseGetSrvCenterMgmtByScNameResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffByAllHierarchy"
+        type="java:org.tempuri.GetStaffByAllHierarchy"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffByAllHierarchyResponse"
+        type="java:org.tempuri.GetStaffByAllHierarchyResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>>GetStaffInfoByIDResponse>GetStaffInfoByIDResult"
+        type="java:org.tempuri.GetStaffInfoByIDResponseGetStaffInfoByIDResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffInfoByFNameLNameResponse"
+        type="java:org.tempuri.GetStaffInfoByFNameLNameResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffInfoByLikeFNameLName"
+        type="java:org.tempuri.GetStaffInfoByLikeFNameLName"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffInfoByFNameLName"
+        type="java:org.tempuri.GetStaffInfoByFNameLName"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetSrvCenterMgmtByScName"
+        type="java:org.tempuri.GetSrvCenterMgmtByScName"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>>GetStaffInfoByUserNameResponse>GetStaffInfoByUserNameResult"
+        type="java:org.tempuri.GetStaffInfoByUserNameResponseGetStaffInfoByUserNameResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetSrvCenterMgmtByScNameResponse"
+        type="java:org.tempuri.GetSrvCenterMgmtByScNameResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffInfoByLikeFNameLNameResponse"
+        type="java:org.tempuri.GetStaffInfoByLikeFNameLNameResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffInfoByIDWithOrgLevel"
+        type="java:org.tempuri.GetStaffInfoByIDWithOrgLevel"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>DataSet"
+        type="java:org.tempuri.DataSet"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffInfoByUserName"
+        type="java:org.tempuri.GetStaffInfoByUserName"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>>GetStaffByHeaderIDResponse>GetStaffByHeaderIDResult"
+        type="java:org.tempuri.GetStaffByHeaderIDResponseGetStaffByHeaderIDResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>>GetStaffByAllHierarchyResponse>GetStaffByAllHierarchyResult"
+        type="java:org.tempuri.GetStaffByAllHierarchyResponseGetStaffByAllHierarchyResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>GetStaffByHeaderID"
+        type="java:org.tempuri.GetStaffByHeaderID"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>>GetStaffInfoByFNameLNameResponse>GetStaffInfoByFNameLNameResult"
+        type="java:org.tempuri.GetStaffInfoByFNameLNameResponseGetStaffInfoByFNameLNameResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://tempuri.org/"
+        qname="ns:>>GetStaffInfoByIDWithOrgLevelResponse>GetStaffInfoByIDWithOrgLevelResult"
+        type="java:org.tempuri.GetStaffInfoByIDWithOrgLevelResponseGetStaffInfoByIDWithOrgLevelResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
